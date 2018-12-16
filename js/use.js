@@ -43,26 +43,25 @@ document.onmousedown = function(ev) {
     // On the mobile phone
 var isdrag = true;
 var tempX, x, tempY, y;
+var heightest = $(document).height;
 
 function dragStart(e) {
+    var start_y;
     isdrag = true;
-    tempY = parseInt($("#testDrag").css("top") + 0);
     y = e.touches[0].pageY;
 }
 
 function dragMove(e) {
     if (isdrag) {
-        var curY = tempY + e.touches[0].pageY - y;
-        //边界判断
-        curY = curY < 0 ? 0 : curY;
-        curY = curY < document.documentElement.clientHeight - 80 ? curY : document.documentElement.clientHeight - 80;
-        $("#up").css({
-            "top": curY
-        });
-        $("#down").css({
-                "bottom": curY
-            })
-            //禁止浏览器默认事件
+        var curY = abs(e.touches[0].pageY - y);
+        var height = 0.5 * heightest;
+        $("#up").offset({ top: -curY, left: 0 });
+        $("#down").offset({ top: height + curY, left: 0 })
+        if (disY > 150) {
+            $("#up").offset({ top: height, left: 0 });
+            $("#down").offset({ top: heightest, left: 0 })
+            window.location = "load.html"
+        }
 
     }
 }

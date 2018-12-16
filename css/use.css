@@ -1,0 +1,55 @@
+/* This CSS is used for setting the whole view of the load.html*/
+
+html {
+    overflow: hidden;
+}
+
+#up {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+#down {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(37, 38, 39);
+}
+
+.center-block {
+    position: relative;
+    text-align: center;
+    /* top: 47.5%; */
+    /* left: 32.5%; */
+    /* width: 40%;
+    height: 5%; */
+    border: none;
+    outline: none;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 2%;
+    color: #777;
+}
+
+.center {
+    background-color: white;
+    position: absolute;
+    text-align: center;
+    border-radius: 4px;
+    top: 47.5%;
+    left: 32.5%;
+    width: 40%;
+    height: 5%;
+    box-shadow: 2px, 2px, 2px, #000000;
+}

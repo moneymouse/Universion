@@ -1,6 +1,6 @@
 /* This CSS is used for setting the whole view of the load.html*/
 
-html {
+body {
     overflow: hidden;
 }
 
@@ -10,7 +10,7 @@ html {
     width: 100%;
     top: 0px;
     left: 0px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(254, 255, 212);
 }
 
 #down {

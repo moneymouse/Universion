@@ -37,18 +37,20 @@ document.onmousedown = function(ev) {
                 $("#down").css({ "top": "50%" });
                 $("#up").css({ "top": "0" });
                 document.onmousemove = null;
+                $(".center").show();
             }
         }
     }
     // On the mobile phone
 var isdrag = true;
 var tempX, x, tempY, y;
-var heightest = $(document).height;
+var heightest = $(document).height();
 
 function dragStart(e) {
     var start_y;
     isdrag = true;
     y = e.touches[0].pageY;
+    $(".center").hide();
 }
 
 function dragMove(e) {
@@ -57,7 +59,7 @@ function dragMove(e) {
         var height = 0.5 * heightest;
         $("#up").offset({ top: -curY, left: 0 });
         $("#down").offset({ top: height + curY, left: 0 })
-        if (disY > 150) {
+        if (curY > 150) {
             $("#up").offset({ top: height, left: 0 });
             $("#down").offset({ top: heightest, left: 0 })
             window.location = "load.html"
@@ -68,6 +70,12 @@ function dragMove(e) {
 
 function dragEnd() {
     isdrag = false;
+    up = 0;
+    down = 0;
+    start_y = 0;
+    $("#down").css({ "top": "50%" });
+    $("#up").css({ "top": "0" });
+    $(".center").show();
 }
 
 $(function() {
